@@ -14,8 +14,8 @@ const ViewContact = () => {
         const fetchContact = async () => {
             try {
                 const [contactResponse, groupsResponse] = await Promise.all([
-                    axios.get(`http://localhost:5000/api/contacts/${id}`),
-                    axios.get('http://localhost:5000/api/groups')
+                    axios.get(`https://contact-manager-server-nine.vercel.app/api/contacts/${id}`),
+                    axios.get('https://contact-manager-server-nine.vercel.app/api/groups')
                 ]);
 
                 setContact(contactResponse.data);

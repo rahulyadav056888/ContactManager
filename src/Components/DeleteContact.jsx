@@ -14,8 +14,8 @@ const DeleteContact = () => {
         const fetchContact = async () => {
             try {
                 const [contactResponse, groupsResponse] = await Promise.all([
-                    axios.get(`http://localhost:5000/api/contacts/${id}`),
-                    axios.get('http://localhost:5000/api/groups')
+                    axios.get(`https://contact-manager-server-nine.vercel.app/api/contacts/${id}`),
+                    axios.get('https://contact-manager-server-nine.vercel.app/api/groups')
                 ]);
 
                 setContact(contactResponse.data);
@@ -34,7 +34,7 @@ const DeleteContact = () => {
         const confirmDelete = window.confirm("Are you sure you want to delete this contact?");
         if (confirmDelete) {
             try {
-                await axios.delete(`http://localhost:5000/api/contacts/${id}`);
+                await axios.delete(`https://contact-manager-server-nine.vercel.app/api/contacts/${id}`);
                 navigate('/');
             } catch (error) {
                 console.error('Error deleting contact:', error);

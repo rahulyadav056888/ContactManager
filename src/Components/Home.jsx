@@ -11,7 +11,7 @@ let Home = () => {
 
     const fetchContacts = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/contacts');
+            const response = await axios.get('https://contact-manager-server-nine.vercel.app/api/contacts');
             setLoading(false);
             setContacts(response.data);
             setFilteredContacts(response.data); // Initially, show all contacts
@@ -42,7 +42,7 @@ let Home = () => {
 
     // const handleDelete = async (id) => {
     //     try {
-    //         await axios.delete(`http://localhost:5000/api/contacts/${id}`);
+    //         await axios.delete(`https://contact-manager-server-nine.vercel.app/api/contacts/${id}`);
     //         fetchContacts(); // Refresh contacts after deletion
     //     } catch (error) {
     //         console.error('Error deleting contact:', error);

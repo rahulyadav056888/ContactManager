@@ -18,7 +18,7 @@ const AddContact = () => {
     useEffect(() => {
         const fetchGroups = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/groups');
+                const response = await axios.get('https://contact-manager-server-nine.vercel.app/api/groups');
                 setGroups(response.data);
             } catch (error) {
                 console.error('Error fetching groups:', error);
@@ -36,7 +36,7 @@ const AddContact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/contacts', contact);
+            await axios.post('https://contact-manager-server-nine.vercel.app/api/contacts', contact);
             navigate('/');
         } catch (error) {
             console.error('Error adding contact:', error);

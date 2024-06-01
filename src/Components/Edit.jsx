@@ -21,7 +21,7 @@ const EditContact = () => {
     useEffect(() => {
         const fetchContact = async () => {
             try {
-                const contactResponse = await axios.get(`http://localhost:5000/api/contacts/${id}`);
+                const contactResponse = await axios.get(`https://contact-manager-server-nine.vercel.app/api/contacts/${id}`);
                 setContact(contactResponse.data);
                 setLoading(false);
             } catch (error) {
@@ -31,7 +31,7 @@ const EditContact = () => {
 
         const fetchGroups = async () => {
             try {
-                const groupsResponse = await axios.get('http://localhost:5000/api/groups');
+                const groupsResponse = await axios.get('https://contact-manager-server-nine.vercel.app/api/groups');
                 setGroups(groupsResponse.data);
 
             } catch (error) {
@@ -50,7 +50,7 @@ const EditContact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:5000/api/contacts/${id}`, contact);
+            await axios.put(`https://contact-manager-server-nine.vercel.app/api/contacts/${id}`, contact);
             navigate('/');
         } catch (error) {
             console.error('Error updating contact:', error);
